@@ -1,5 +1,5 @@
 # Use the latest LTS version of Node.js
-FROM node:22-alpine
+FROM node:22
  
 # Set the working directory inside the container
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
  
 # Install dependencies
-RUN npm install
+RUN npm install --include=dev
  
 # Copy the rest of your application files
 COPY . .
@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 5173
  
 # Define the command to run your app
-CMD ["npm", "run", "dev", "--", "--host"]
+CMD ["npx", "vite", "dev", "--", "--host"]
