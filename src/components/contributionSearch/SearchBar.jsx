@@ -1,9 +1,10 @@
 export default function SearchBar({ label, value, onChange }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <label style={{ marginBottom: '0.25rem', fontSize: '0.9rem' }}>{label}</label>
+      {/* <label style={{ marginBottom: '0.25rem', fontSize: '0.9rem' }}>{label}</label> */}
       <input
         type="text"
+        placeholder={label}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         style={{
